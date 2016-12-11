@@ -7,6 +7,8 @@ public class InputManager : MonoBehaviour
 	public static event KeyAction OnUpPressed;
 	public static event KeyAction OnLeftPressed;
 	public static event KeyAction OnRightPressed;
+	public static event KeyAction OnLeftHeld;
+	public static event KeyAction OnRightHeld;
 
 	void Update()
 	{
@@ -26,11 +28,27 @@ public class InputManager : MonoBehaviour
 			}
 		}
 
+		if (Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) 
+		{
+			if (OnLeftHeld != null) 
+			{
+				OnLeftHeld ();
+			}
+		}
+
 		if (Input.GetKeyDown (KeyCode.D) || Input.GetKeyDown (KeyCode.RightArrow)) 
 		{
 			if (OnRightPressed != null) 
 			{
 				OnRightPressed ();
+			}
+		}
+
+		if (Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) 
+		{
+			if (OnRightHeld != null) 
+			{
+				OnRightHeld ();
 			}
 		}
 	}
