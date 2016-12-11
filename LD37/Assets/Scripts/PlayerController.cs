@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 	protected float accSpeed;
 	[SerializeField]
 	protected float dampening;
-
 	private const float ACC_DURATION = 0.1f;
 	//Whether or not to apply dampening to the velocity. Set to false during acceleration.
 	private bool applyDampening = true;
@@ -110,6 +109,6 @@ public class PlayerController : MonoBehaviour
 		transform.rotation = Quaternion.Euler (newRot);
 	}
 	#endregion
-
+		
 	public Vector2 GetVelocity () { return velocity; }
 }
