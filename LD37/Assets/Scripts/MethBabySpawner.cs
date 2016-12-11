@@ -5,6 +5,7 @@ public class MethBabySpawner : MonoBehaviour
 {
 	[SerializeField]
 	protected GameObject methBaby;
+	const float SPEED = 2;
 
 	void Start()
 	{
@@ -13,6 +14,7 @@ public class MethBabySpawner : MonoBehaviour
 
 	void InstantiateMethBaby()
 	{
-		Instantiate (methBaby, transform.position, transform.rotation);
+		GameObject child = Instantiate (methBaby, transform.position, transform.rotation) as GameObject;
+		child.GetComponent<ProjectileController> ().SetSpeed (SPEED);
 	}
 }
