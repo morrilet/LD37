@@ -7,11 +7,14 @@ public class InputManager : MonoBehaviour
 	public static event KeyAction OnUpPressed;
 	public static event KeyAction OnLeftPressed;
 	public static event KeyAction OnRightPressed;
+	public static event KeyAction OnDownPressed;
 	public static event KeyAction OnLeftHeld;
 	public static event KeyAction OnRightHeld;
+	public static event KeyAction OnDownHeld;
 
 	void Update()
 	{
+		#region UP
 		if (Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown (KeyCode.UpArrow)) 
 		{
 			if (OnUpPressed != null) 
@@ -19,7 +22,27 @@ public class InputManager : MonoBehaviour
 				OnUpPressed ();
 			}
 		}
+		#endregion
 
+		#region DOWN
+		if (Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.DownArrow)) 
+		{
+			if (OnDownPressed != null) 
+			{
+				OnDownPressed ();
+			}
+		}
+
+		if(Input.GetKey (KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+		{
+			if(OnDownHeld != null)
+			{
+				OnDownHeld();
+			}
+		}
+		#endregion
+
+		#region LEFT
 		if (Input.GetKeyDown (KeyCode.A) || Input.GetKeyDown (KeyCode.LeftArrow)) 
 		{
 			if (OnLeftPressed != null) 
@@ -35,7 +58,9 @@ public class InputManager : MonoBehaviour
 				OnLeftHeld ();
 			}
 		}
+		#endregion
 
+		#region RIGHT
 		if (Input.GetKeyDown (KeyCode.D) || Input.GetKeyDown (KeyCode.RightArrow)) 
 		{
 			if (OnRightPressed != null) 
@@ -51,5 +76,6 @@ public class InputManager : MonoBehaviour
 				OnRightHeld ();
 			}
 		}
+		#endregion
 	}
 }

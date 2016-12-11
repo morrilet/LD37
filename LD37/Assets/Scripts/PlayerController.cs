@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 		InputManager.OnUpPressed += Accelerate;
 		InputManager.OnRightHeld += TurnRight;
 		InputManager.OnLeftHeld  += TurnLeft;
+		InputManager.OnDownHeld  += ApplyDampening;
 	}
 
 	void Update()
@@ -36,7 +37,6 @@ public class PlayerController : MonoBehaviour
 	#region Collision
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		Debug.Log ("HERE");
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Wall")) 
 		{
 			for (int i = 0; i < other.contacts.Length; i++) 

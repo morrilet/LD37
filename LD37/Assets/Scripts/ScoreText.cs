@@ -19,13 +19,13 @@ public class ScoreText : MonoBehaviour
 		scoreText = GetComponent<Text> ();
 		startingFontSize = scoreText.fontSize;
 		confettiEmitter = GameObject.FindWithTag ("ScoreConfetti").GetComponent<ParticleSystem> ();
-
-		InputManager.OnRightPressed += ApplyJuice;
 	}
 
 	void Update()
 	{
-		if (float.Parse(scoreText.text.ToString()) % 1000f == 0.0f) 
+		scoreText.text = "$" + GameManager.GetScore ().ToString ("N0");
+
+		if (GameManager.GetScore() % 1000f == 0.0f) 
 		{
 			ApplyJuice ();
 		}
