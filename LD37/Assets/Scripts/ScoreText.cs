@@ -5,6 +5,7 @@ using System.Collections;
 public class ScoreText : MonoBehaviour 
 {
 	private Text scoreText;
+	private ParticleSystem confettiEmitter;
 	private float startingFontSize;
 	[SerializeField]
 	protected float maxFontSize;
@@ -17,6 +18,7 @@ public class ScoreText : MonoBehaviour
 	{
 		scoreText = GetComponent<Text> ();
 		startingFontSize = scoreText.fontSize;
+		confettiEmitter = GameObject.FindWithTag ("ScoreConfetti").GetComponent<ParticleSystem> ();
 
 		InputManager.OnRightPressed += ApplyJuice;
 	}
@@ -39,11 +41,11 @@ public class ScoreText : MonoBehaviour
 	private IEnumerator JuiceCoroutine()
 	{
 		float timer = 0.0f;
+		confettiEmitter.Play ();
 		while (timer < EXPLOSION_DURATION)
 		{
 			float percentComplete = timer / EXPLOSION_DURATION;
-			scoreText.fontSize = (int)Mathf.Lerp (scoreText.fontSize, maxFontSize, explosionCurve.Evaluate (percentComplete));
-			Debug.Log (explosionCurve.Evaluate (percentComplete) + " :: " + percentComplete + "%");
+			scoreText.fontSize = (int)Mathf.Lerp (startingFontSize, maxFontSize, explosionCurve.Evaluate (percentComplete));
 
 			timer += Time.deltaTime;
 			yield return null;
