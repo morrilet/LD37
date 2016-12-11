@@ -8,7 +8,7 @@ public class ProjectileController : MonoBehaviour
 
 	void Start ()
 	{
-		
+		velocity = new Vector2 (2, 2);
 	}
 
 	void Update ()
@@ -18,6 +18,8 @@ public class ProjectileController : MonoBehaviour
 
 	void MoveForward ()
 	{
-		
+		Vector3 currentPos = transform.position;
+		currentPos = transform.position + (Vector3)velocity;
+		transform.position = currentPos;
 	}
 }
