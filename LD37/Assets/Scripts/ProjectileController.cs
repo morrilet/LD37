@@ -4,12 +4,8 @@ using System.Collections;
 public class ProjectileController : MonoBehaviour
 {
 	private Vector2 velocity;
+	private float speed;
 	private float rotation;
-
-	void Start ()
-	{
-		velocity = new Vector2 (2, 2);
-	}
 
 	void Update ()
 	{
@@ -18,8 +14,14 @@ public class ProjectileController : MonoBehaviour
 
 	void MoveForward ()
 	{
+		velocity = speed * transform.up;
 		Vector3 currentPos = transform.position;
-		currentPos = transform.position + (Vector3)velocity;
+		currentPos += (Vector3)velocity;
 		transform.position = currentPos;
+	}
+
+	void SetSpeed(float _speed)
+	{
+		speed = _speed;
 	}
 }
