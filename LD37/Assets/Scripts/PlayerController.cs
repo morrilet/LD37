@@ -39,12 +39,16 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Wall")) 
 		{
-			for (int i = 0; i < other.contacts.Length; i++) 
-			{
-				//Debug.DrawRay (other.contacts [i].point, other.contacts [i].normal);
-				velocity *= .35f;
-				velocity = Vector2.Reflect (velocity, other.contacts [i].normal);
-			}
+			velocity *= .65f;
+			velocity = Vector2.Reflect (velocity, other.contacts [0].normal);
+		}
+	}
+
+	void OnCollisionStay2D(Collision2D other)
+	{
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Wall")) 
+		{
+			velocity = Vector2.Reflect (velocity, other.contacts [0].normal);
 		}
 	}
 	#endregion

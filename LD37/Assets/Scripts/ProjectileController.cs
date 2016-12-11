@@ -7,9 +7,14 @@ public class ProjectileController : MonoBehaviour
 	private float speed;
 	private float rotation;
 
+	void Start()
+	{
+		velocity = speed * Time.deltaTime * (Vector2)transform.up;
+	}
+
 	void Update ()
 	{
-		MoveForward ();
+		Move ();
 	}
 
 	#region Collision
@@ -17,18 +22,34 @@ public class ProjectileController : MonoBehaviour
 	{
 		if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
 		{
+			velocity = Vector2.Reflect (velocity, other.contacts [0].normal);
 			for (int i = 0; i < other.contacts.Length; i++)
 			{
-				velocity = Vector2.Reflect (velocity, other.contacts [i].normal);
+				//Debug.DrawRay (other.contacts [i].point, other.contacts [i].normal, Color.blue);
+				//Debug.DrawRay (other.contacts [i].point, (Vector3)Vector2.Reflect (velocity, other.contacts [i].normal).normalized, Color.red);
+				//velocity = Vector2.Reflect (velocity, other.contacts [i].normal);
+			}
+		}
+	}
+
+	void OnCollisionStay2D(Collision2D other)
+	{
+		if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+		{
+			velocity = Vector2.Reflect (velocity, other.contacts [0].normal);
+			for (int i = 0; i < other.contacts.Length; i++)
+			{
+				//Debug.DrawRay (other.contacts [i].point, other.contacts [i].normal, Color.blue);
+				//Debug.DrawRay (other.contacts [i].point, (Vector3)Vector2.Reflect (velocity, other.contacts [i].normal).normalized, Color.red);
+				//velocity = Vector2.Reflect (velocity, other.contacts [i].normal);
 			}
 		}
 	}
 	#endregion
 
 	#region Movement
-	void MoveForward ()
+	void Move ()
 	{
-		velocity = speed * Time.deltaTime * transform.up;
 		Vector3 currentPos = transform.position;
 		currentPos += (Vector3)velocity;
 		transform.position = currentPos;
