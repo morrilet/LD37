@@ -1,0 +1,85 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+# Conflicts:
+#	LD37/Library/CurrentLayout.dwlt
+#	LD37/Library/InspectorExpandedItems.asset
+#	LD37/Library/LastSceneManagerSetup.txt
+#	LD37/Library/ScriptAssemblies/Assembly-CSharp.dll
+#	LD37/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+#	LD37/Library/assetDatabase3
+#	LD37/Library/expandedItems
+#	LD37/Library/metadata/00/00000000000000003000000000000000
+#	LD37/Library/metadata/00/00000000000000004000000000000000
+#	LD37/Library/metadata/00/00000000000000006100000000000000
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 1 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	deleted:    LD37/Assets/Animations.meta
+#	new file:   LD37/Assets/Images/bubble.png
+#	new file:   LD37/Assets/Images/bubble.png.meta
+#	modified:   LD37/Assets/Materials.meta
+#	new file:   LD37/Assets/Materials/Bubble1.mat
+#	new file:   LD37/Assets/Materials/Bubble1.mat.meta
+#	new file:   LD37/Assets/Prefabs/BubbleEmitter.prefab
+#	new file:   LD37/Assets/Prefabs/BubbleEmitter.prefab.meta
+#	modified:   LD37/Assets/Scenes/CollisionsTest.unity
+#	new file:   LD37/Assets/Scripts/BubbleEmitterController.cs
+#	new file:   LD37/Assets/Scripts/BubbleEmitterController.cs.meta
+#	deleted:    LD37/Assets/Sounds.meta
+#	modified:   LD37/Library/LastSceneManagerSetup.txt
+#	new file:   LD37/Library/ShaderCache/0/0593da3cd136723e04ed14e3b52af5a9.bin
+#	new file:   LD37/Library/ShaderCache/1/13d5ce21a3095ff574944fe052756928.bin
+#	new file:   LD37/Library/ShaderCache/1/15b51343ca1c1cbffdd01653348785dc.bin
+#	new file:   LD37/Library/ShaderCache/1/1a2b7fe560e488a838d8954e1442eda6.bin
+#	new file:   LD37/Library/ShaderCache/2/238578e4ce2020afada42a9b1874c401.bin
+#	new file:   LD37/Library/ShaderCache/3/38aa91f9394c92c966b576bdb9f86a62.bin
+#	new file:   LD37/Library/ShaderCache/3/3be32702634463e1bcd71308db163fa1.bin
+#	new file:   LD37/Library/ShaderCache/4/41b89021ebac8f3187c747a7a656c3ad.bin
+#	new file:   LD37/Library/ShaderCache/4/442939475633dbf4f519c0ab7cddb714.bin
+#	new file:   LD37/Library/ShaderCache/4/487a05413647b4cd81dfc4dfa74ce02c.bin
+#	new file:   LD37/Library/ShaderCache/5/57859c5db5c39a3294d1c710d2047d28.bin
+#	new file:   LD37/Library/ShaderCache/5/5b7ea82ed062366b0d8ed100480103ce.bin
+#	new file:   LD37/Library/ShaderCache/a/a8a8842be065a9c9cc9728227ef8e4b7.bin
+#	new file:   LD37/Library/ShaderCache/b/b16705b953d60684790f40b2da7f6f5b.bin
+#	modified:   LD37/Library/metadata/00/00000000000000002000000000000000
+#	modified:   LD37/Library/metadata/00/00000000000000004100000000000000
+#	modified:   LD37/Library/metadata/00/00000000000000005000000000000000
+#	modified:   LD37/Library/metadata/00/00000000000000005100000000000000
+#	modified:   LD37/Library/metadata/00/00000000000000006000000000000000
+#	modified:   LD37/Library/metadata/00/00000000000000007000000000000000
+#	modified:   LD37/Library/metadata/00/00000000000000007100000000000000
+#	modified:   LD37/Library/metadata/00/00000000000000008000000000000000
+#	modified:   LD37/Library/metadata/00/00000000000000008100000000000000
+#	modified:   LD37/Library/metadata/00/00000000000000009000000000000000
+#	modified:   LD37/Library/metadata/00/0000000000000000a000000000000000
+#	modified:   LD37/Library/metadata/00/0000000000000000a100000000000000
+#	modified:   LD37/Library/metadata/00/0000000000000000b000000000000000
+#	modified:   LD37/Library/metadata/00/0000000000000000c000000000000000
+#	new file:   LD37/Library/metadata/50/504c7296b8f853942be1e3fc34e43e51
+#	renamed:    LD37/Library/metadata/63/631c0e3331983d64db4a8e29434ecb8d.info -> LD37/Library/metadata/50/504c7296b8f853942be1e3fc34e43e51.info
+#	renamed:    LD37/Library/metadata/10/10507d4bb7fb9b942a56fbd2e2657291 -> LD37/Library/metadata/55/55df56fa5cd7f554fbcbdfe52141c5af
+#	new file:   LD37/Library/metadata/55/55df56fa5cd7f554fbcbdfe52141c5af.info
+#	renamed:    LD37/Library/metadata/63/631c0e3331983d64db4a8e29434ecb8d -> LD37/Library/metadata/6d/6d216b8fd79ae6047bf9b9762c26dfbe
+#	renamed:    LD37/Library/metadata/10/10507d4bb7fb9b942a56fbd2e2657291.info -> LD37/Library/metadata/6d/6d216b8fd79ae6047bf9b9762c26dfbe.info
+#	new file:   LD37/Library/metadata/a4/a453fcb9c7952f04d84df8f17e37677a
+#	new file:   LD37/Library/metadata/a4/a453fcb9c7952f04d84df8f17e37677a.info
+#	renamed:    LD37/Library/metadata/98/98c56d2a35f01e14d913849171ab8869 -> LD37/Library/metadata/b5/b5c39fc6e68b7e24db0e62d5bb5115d0
+#	renamed:    LD37/Library/metadata/98/98c56d2a35f01e14d913849171ab8869.info -> LD37/Library/metadata/b5/b5c39fc6e68b7e24db0e62d5bb5115d0.info
+#	modified:   LD37/Library/shadercompiler-UnityShaderCompiler.exe0.log
+#	modified:   LD37/ProjectSettings/TagManager.asset
+#
+
