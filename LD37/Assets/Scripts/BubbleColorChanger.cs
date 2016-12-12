@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BubbleColorChanger : MonoBehaviour
 {
-	SpriteRenderer spriteRenderer;
-	Color color1;
+	Image bubbleImage;
+	[SerializeField]
+	protected Color color1;
 	[SerializeField]
 	protected Color color2;
 	private const float TIMER_MAX = 5f;
 	private float timer;
 	private bool countingUp;
+
 	void Start ()
 	{
-		spriteRenderer = GetComponent<SpriteRenderer> ();
-		color1 = spriteRenderer.color;
+		bubbleImage = GetComponent<Image> ();
 		countingUp = true;
 	}
 
@@ -36,6 +38,6 @@ public class BubbleColorChanger : MonoBehaviour
 		
 		float percent = timer / TIMER_MAX;
 		Color newColor = Color.Lerp (color1, color2, percent);
-		spriteRenderer.color = newColor;
+		bubbleImage.color = newColor;
 	}
 }

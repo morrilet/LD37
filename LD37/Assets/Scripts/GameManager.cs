@@ -6,15 +6,14 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	protected AnimationCurve multiplierCurve;
 	private static float score;
-	private static float multiplier;
+	private static float multiplier = 1.0f;
 	private static int methBabyCount;
 
-	private const int MAX_METHBABIES = 50; //The max number of methbabies before the multiplier curve flattens out.
-	private const float MAX_MULTIPLIER = 5.0f;
+	private const int MAX_METHBABIES = 75; //The max number of methbabies before the multiplier curve flattens out.
+	private const float MAX_MULTIPLIER = 25.0f; //The max multiplier value before it switches off of the curve.
 
 	void Start()
 	{
-		multiplier = 1.0f;
 		
 		MethBabySpawner.OnSpawnMethBaby += AddToMethBabyCount;
 		MethBabySpawner.OnSpawnMethBaby += UpdateMultiplier;
@@ -39,7 +38,7 @@ public class GameManager : MonoBehaviour
 		}
 		else 
 		{
-			if (methBabyCount % (MAX_METHBABIES / 2.0f) == 0) 
+			if (methBabyCount % (MAX_METHBABIES / 5.0f) == 0) 
 			{
 				multiplier += .1f;
 			}

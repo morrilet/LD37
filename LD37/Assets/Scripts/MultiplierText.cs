@@ -2,7 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class MultiplierText : MonoBehaviour {
+public class MultiplierText : MonoBehaviour 
+{
 
 	private Text multiplierText;
 	private float startingFontSize;
@@ -11,6 +12,9 @@ public class MultiplierText : MonoBehaviour {
 	[SerializeField]
 	protected AnimationCurve explosionCurve;
 
+	private float currentMultiplier;
+	private float prevMultiplier;
+
 	private const float EXPLOSION_DURATION = 1.0f;
 
 	void Start ()
@@ -18,16 +22,26 @@ public class MultiplierText : MonoBehaviour {
 		multiplierText = GetComponent<Text> ();
 		startingFontSize = multiplierText.fontSize;
 		InputManager.OnDownPressed += ApplyJuice;
+
+		currentMultiplier = GameManager.GetMultiplier ();
+		prevMultiplier = currentMultiplier;
 	}
 
 	void Update ()
 	{
-		
+		multiplierText.text = "x" + GameManager.GetMultiplier ().ToString ("N1");
+
+		currentMultiplier = GameManager.GetMultiplier ();
+		if((int)(currentMultiplier * 10f) / 10f != (int)(prevMultiplier * 10f) / 10f)
+		{
+			ApplyJuice ();
+		}
+		prevMultiplier = currentMultiplier;
 	}
 
 	void ApplyJuice()
 	{
-		StopCoroutine ("JuiceCoroutine");
+		//StopCoroutine ("JuiceCoroutine");
 		StartCoroutine (JuiceCoroutine ());
 	}
 
