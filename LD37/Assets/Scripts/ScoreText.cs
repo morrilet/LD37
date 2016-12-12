@@ -19,6 +19,8 @@ public class ScoreText : MonoBehaviour
 		scoreText = GetComponent<Text> ();
 		startingFontSize = scoreText.fontSize;
 		confettiEmitter = GameObject.FindWithTag ("ScoreConfetti").GetComponent<ParticleSystem> ();
+
+		ScoreTextController.OnMilestoneReached += ApplyJuice;
 	}
 
 	void Update()
@@ -27,7 +29,7 @@ public class ScoreText : MonoBehaviour
 
 		if (GameManager.GetScore() % 1000f == 0.0f) 
 		{
-			ApplyJuice ();
+			//ApplyJuice ();
 		}
 	}
 
