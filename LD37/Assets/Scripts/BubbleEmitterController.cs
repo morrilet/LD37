@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BubbleEmitterController : MonoBehaviour {
+public class BubbleEmitterController : MonoBehaviour{
 
 	ParticleSystem particleSystem;
 
