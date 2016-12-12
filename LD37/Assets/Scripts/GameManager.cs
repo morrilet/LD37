@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameManager : MonoBehaviour 
@@ -43,6 +44,11 @@ public class GameManager : MonoBehaviour
 				multiplier += .1f;
 			}
 		}
+	}
+
+	public static void GameOver()
+	{
+		SceneManager.LoadScene ("GameOverMenu");
 	}
 
 

@@ -6,15 +6,22 @@ public class ProjectileController : MonoBehaviour
 	private Vector2 velocity;
 	private float speed;
 	private float rotation;
+	private float collisionTimer;
+	private const float COLLISION_TIMER_MAX = 1.5f;
+
+	[HideInInspector]
+	public GameObject parent;
 
 	void Start()
 	{
 		velocity = speed * Time.deltaTime * (Vector2)transform.up;
+		collisionTimer = 0;
 	}
 
 	void Update ()
 	{
 		Move ();
+		CheckIfCanCollide ();
 	}
 
 	#region Collision
@@ -59,5 +66,17 @@ public class ProjectileController : MonoBehaviour
 	public void SetSpeed(float _speed)
 	{
 		speed = _speed;
+	}
+
+	void CheckIfCanCollide ()
+	{
+		if (collisionTimer >= COLLISION_TIMER_MAX)
+		{
+			Physics2D.IgnoreCollision (parent.GetComponent<Collider2D> (), GetComponent<Collider2D> (), false);
+		}
+		else
+		{
+			collisionTimer += Time.deltaTime;
+		}
 	}
 }

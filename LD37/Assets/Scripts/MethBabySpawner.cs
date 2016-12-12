@@ -20,10 +20,14 @@ public class MethBabySpawner : MonoBehaviour
 	{
 		GameObject child = Instantiate (methBaby, transform.position, transform.rotation) as GameObject;
 		child.GetComponent<ProjectileController> ().SetSpeed (projectileSpeed);
+		child.GetComponent<ProjectileController> ().parent = this.gameObject;
+
+		Physics2D.IgnoreCollision (child.GetComponent<Collider2D> (), GetComponent<Collider2D> (), true);
 
 		if (OnSpawnMethBaby != null) 
 		{
 			OnSpawnMethBaby ();
 		}
 	}
+		
 }
