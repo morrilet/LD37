@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/CollisionsTest.unity
-=======
-- path: Assets/Scenes/GameOverMenu.unity
->>>>>>> origin/master
+- path: Assets/Scenes/MainGame.unity
   isLoaded: 1
   isActive: 1
