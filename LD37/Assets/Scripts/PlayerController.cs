@@ -50,6 +50,10 @@ public class PlayerController : MonoBehaviour
 		{
 			velocity = Vector2.Reflect (velocity, other.contacts [0].normal);
 		}
+		if (other.gameObject.layer == LayerMask.NameToLayer ("MethBaby")) 
+		{
+			GameManager.GameOver ();	
+		}
 	}
 	#endregion
 

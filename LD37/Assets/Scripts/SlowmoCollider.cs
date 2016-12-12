@@ -13,11 +13,11 @@ public class SlowmoCollider : MonoBehaviour
 	
 	}
 
-	void OnCollisionEnter2D (Collider2D other)
-	{
-		if (other.gameObject.layer == LayerMask.NameToLayer ("MethBaby"))
-		{
-			
-		}
-	}
+//	void OnCollisionEnter2D (Collider2D other)
+//	{
+//		if (other.gameObject.layer == LayerMask.NameToLayer ("MethBaby"))
+//		{
+//			
+//		}
+//	}
 }
