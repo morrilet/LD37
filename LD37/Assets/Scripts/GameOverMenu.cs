@@ -8,13 +8,14 @@ public class GameOverMenu : MonoBehaviour
 
 	void Start()
 	{
-		loader = SceneManager.LoadSceneAsync ("MainGame");
-		loader.allowSceneActivation = false;
+		//loader = SceneManager.LoadSceneAsync ("MainGame");
+		//loader.allowSceneActivation = false;
 	}
 
 	public void Replay()
 	{
-		loader.allowSceneActivation = true;
+		SceneManager.LoadScene ("MainGame");
+		//loader.allowSceneActivation = true;
 	}
 
 	public void BackToMenu()

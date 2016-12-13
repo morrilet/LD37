@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
 	void Start()
 	{
+		Debug.Log("Here1");
+
 		coll = GetComponent<Collider2D> ();
 
 		InputManager.OnUpPressed += Accelerate;
@@ -52,7 +54,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (other.gameObject.layer == LayerMask.NameToLayer ("MethBaby")) 
 		{
-			GameManager.GameOver ();	
+			GameManager.GameOver ();
 		}
 	}
 	#endregion
