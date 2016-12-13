@@ -4,10 +4,16 @@ using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour 
 {
-	[SerializeField]
-	protected static AudioSource musicSource, effectSource;
-	[SerializeField]
-	protected static List<AudioClip> effects, music;
+	public AudioSource tempMusicSource, tempEffectSource;
+	public List<AudioClip> tempEffects, tempMusic;
+
+	public static AudioSource musicSource, effectSource;
+	public static List<AudioClip> effects, music;
+
+	void Start()
+	{
+		TransferLists ();
+	}
 
 	public static void PlayEffect(string effectName)
 	{
@@ -62,4 +68,14 @@ public class AudioManager : MonoBehaviour
 			}
 		}
 	}
+
+	void TransferLists()
+	{
+		musicSource = tempMusicSource;
+		effectSource = tempEffectSource;
+
+		effects = tempEffects;
+		music = tempMusic;
+	}
+
 }
