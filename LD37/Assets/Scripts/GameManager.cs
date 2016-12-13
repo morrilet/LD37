@@ -15,14 +15,16 @@ public class GameManager : MonoBehaviour
 
 	void Start()
 	{
-		
+		score = 0;
+		multiplier = 1.0f;
+
 		MethBabySpawner.OnSpawnMethBaby += AddToMethBabyCount;
 		MethBabySpawner.OnSpawnMethBaby += UpdateMultiplier;
 	}
 
 	void Update()
 	{
-		Debug.Log (1 * multiplier);
+		//Debug.Log (1 * multiplier);
 		score += 1 * multiplier;
 	}
 

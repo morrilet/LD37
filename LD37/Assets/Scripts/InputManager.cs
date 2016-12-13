@@ -78,4 +78,15 @@ public class InputManager : MonoBehaviour
 		}
 		#endregion
 	}
+
+	void OnDestroy()
+	{
+		OnUpPressed = null;
+		OnDownPressed = null;
+		OnLeftPressed = null;
+		OnRightPressed = null;
+		OnRightHeld = null;
+		OnLeftHeld = null;
+		OnDownHeld = null;
+	}
 }
