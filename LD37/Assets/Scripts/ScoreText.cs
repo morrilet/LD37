@@ -35,6 +35,7 @@ public class ScoreText : MonoBehaviour
 
 	void ApplyJuice()
 	{
+		AudioManager.PlayEffect ("PartyBlower", 0.25f);
 		StopCoroutine ("JuiceCoroutine");
 		StartCoroutine (JuiceCoroutine ());
 	}

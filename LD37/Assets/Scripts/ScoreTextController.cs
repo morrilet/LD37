@@ -50,4 +50,9 @@ public class ScoreTextController : MonoBehaviour
 			}
 		}
 	}
+
+	void OnDestroy()
+	{
+		OnMilestoneReached = null;
+	}
 }

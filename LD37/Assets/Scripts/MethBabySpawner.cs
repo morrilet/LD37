@@ -35,5 +35,4 @@ public class MethBabySpawner : MonoBehaviour
 	{
 		OnSpawnMethBaby = null;
 	}
-		
 }
