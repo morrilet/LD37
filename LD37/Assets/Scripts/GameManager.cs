@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
 	{
 		score = 0;
 		multiplier = 1.0f;
+		methBabyCount = 0;
+
+		AudioManager.PlayMusic ("MainMusicLoop");
 
 		MethBabySpawner.OnSpawnMethBaby += AddToMethBabyCount;
 		MethBabySpawner.OnSpawnMethBaby += UpdateMultiplier;
